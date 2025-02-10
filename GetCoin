@@ -5,15 +5,21 @@ class Program
     static void GetCoins(int summa)
     {
         int[] coins = { 50, 20, 10, 5, 2, 1 };
+        int i = 0;
 
         Console.WriteLine("Vajalikud mündid:");
-        for (int i = 0; i < coins.Length; i++)
+
+        while (summa > 0)
         {
-            int count = summa / coins[i];
-            if (count > 0)
+            if (summa >= coins[i])
             {
+                int count = summa / coins[i];
                 Console.WriteLine($"{count} × {coins[i]} senti");
                 summa %= coins[i];
+            }
+            else
+            {
+                i++;
             }
         }
     }
