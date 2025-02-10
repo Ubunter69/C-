@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void GetCoins(int summa)
+    {
+        int[] coins = { 50, 20, 10, 5, 2, 1 };
+
+        Console.WriteLine("Vajalikud mündid:");
+        for (int i = 0; i < coins.Length; i++)
+        {
+            int count = summa / coins[i];
+            if (count > 0)
+            {
+                Console.WriteLine($"{count} × {coins[i]} senti");
+                summa %= coins[i];
+            }
+        }
+    }
+
+    static void Main()
+    {
+        Console.Write("Sisesta rahasumma (sendites): ");
+        GetCoins(int.Parse(Console.ReadLine()));
+    }
+}
