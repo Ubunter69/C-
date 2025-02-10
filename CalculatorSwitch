@@ -45,6 +45,7 @@ namespace CalculatorSwitch
                     break;
 
                 default:
+                    Console.WriteLine("Error");
                     break;
             }
         }
